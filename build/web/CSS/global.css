@@ -1,0 +1,70 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 2016-3-19, 18:09:37
+    Author     : Administrator
+*/
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: gray;
+}
+/*总框架*/
+div#containner{
+    width: 1100px;
+    margin: 0 auto;
+}
+/*标题*/
+#header{
+    height: 60px;
+    background-color: #4D4D4D;
+}
+#header p{
+    font-size: 40px;
+    width: 300px;
+    height: 50px;
+    margin: 0 auto;
+}
+div#map{
+
+    background-color: white;
+    float: left;
+    margin: 0 auto;
+}
+div#map img{
+    padding: 0;
+    margin: 0 auto;
+}
+div#control{
+    width: 100px;
+    float: left;
+    
+}
+#corID{
+    width: 140px;
+    height: 40px;
+    margin-left: 10px;
+}
+#submit{
+    width: 50px;
+    
+    margin-left: 55px;
+    height: 30px;
+}
+div#control button{
+    font-size: 20px;
+    background-color: #698B69;
+    margin-bottom: 15px;
+    margin-top: 15px;
+    margin-left: 20px;
+    border-radius:10px;
+    -moz-border-radius:10px;
+}
+div#control #zoomin{
+    margin-top: 40px;
+}
