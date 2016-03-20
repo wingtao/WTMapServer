@@ -48,12 +48,16 @@ div#control{
 #corID{
     width: 140px;
     height: 40px;
+    margin-top: 10px;
     margin-left: 10px;
+    border-radius: 5px;
 }
 #submit{
-    width: 50px;
-    
-    margin-left: 55px;
+    width: 80px;
+    background-color: #698B69;
+    border-radius:5px;
+    margin-top: 5px;
+    margin-left: 40px;
     height: 30px;
 }
 div#control button{

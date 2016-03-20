@@ -3,6 +3,7 @@ package cn.edu.csu.gis;
 import com.vividsolutions.jts.geom.Geometry;
 import com.vividsolutions.jts.geom.LineString;
 import com.vividsolutions.jts.geom.MultiLineString;
+import com.vividsolutions.jts.geom.MultiPolygon;
 import com.vividsolutions.jts.geom.Point;
 import com.vividsolutions.jts.geom.Polygon;
 import com.vividsolutions.jts.io.ParseException;
@@ -178,7 +179,9 @@ public class MapRender {
             drawLineString((LineString) geo);
         } else if (type == "Polygon") {
             drawPolygon((Polygon) geo);
-        } else if (type == "MultiLineString") {
+        } else if (type == "MultiPolygon") {
+            drawMultiPolygon((MultiPolygon) geo);
+        }else if (type == "MultiLineString") {
             drawMultiLineString((MultiLineString) geo);
         }
 
@@ -220,6 +223,14 @@ public class MapRender {
         for (int i = 0; i < nl; i++) {
             LineString ls = (LineString) mls.getGeometryN(i);
             drawLineString(ls);
+        }
+    }
+    
+    private void drawMultiPolygon(MultiPolygon mls) {
+        int nl = mls.getNumGeometries();
+        for (int i = 0; i < nl; i++) {
+            Polygon ls = (Polygon) mls.getGeometryN(i);
+            drawPolygon(ls);
         }
     }
 

@@ -56,9 +56,19 @@ and open the template in the editor.
                         lat: 28.2
                     });
                 });
-                
-                $("#submit").click(function(){
+
+                $("#submit").click(function () {
                     map.changeCoor();
+                });
+
+                $('#img').mousemove(function (e) {
+                    var positionX = e.pageX - ($("#map").offset().left+map.opts.width/2); //获取当前鼠标相对map中心点的X坐标
+                    var positionY = e.pageY - ($("#map").offset().top+map.opts.height/2); //获取当前鼠标相对map中心点的Y坐标
+
+                    var xx = positionX/map.opts.scale + map.opts.centerX;
+                    var yy = map.opts.centerY - positionY/map.opts.scale;       //因为屏幕Y方向和纬度方向是相反的
+                    $("#XID").val(xx);
+                    $("#YID").val(yy);
                 });
             });
 
@@ -74,17 +84,24 @@ and open the template in the editor.
             </div>
 
             <div id="control">
-                    <input type="text" name="coordinate" id="corID" placeholder="请输入坐标系标识符" />
-                    <br />
-                    <input type="button" name="提交" value="提交" id="submit" />
-                
+                <input type="text" name="coordinate" id="corID" placeholder="请输入坐标系标识符" />
+                <br />
+                <input type="button" name="提交" value="提交" id="submit" />
+
                 <button id="zoomin">zoom in</button><br>
                 <button id="zoomout">zoom out</button><br>
                 <button id="left">left</button><br>
                 <button id="right">right</button><br>
                 <button id="up">up</button><br>
                 <button id="down">down</button><br>
-                <button id="changsha">changsha</button>          
+                <button id="changsha">changsha</button> 
+                <form>
+                    X：
+                    <input type="text" name="firstname" id="XID">
+                    <br />
+                    Y：
+                    <input type="text" name="lastname" id="YID">
+                </form>
             </div>
         </div>
     </body>
